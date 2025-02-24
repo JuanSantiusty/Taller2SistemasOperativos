@@ -1,10 +1,8 @@
+
 #include <stdio.h>
-#include <stdlib.h>
-#include "empresa.h"
 
 int main(){
   int opc=0;
-  Empresa e;
 
   do{
     printf("\nElija una de las opciones");
@@ -12,31 +10,30 @@ int main(){
     printf("\n2- Solicitar y procesar las fcaturas del mes de un semestre");
     printf("\n3- Carcular el recaudo obtenido por cada mes");
     printf("\n4- Calcular y mostrar el recaudo obtenido del semestre, basado en el recaudo obtenido por cada mes");
-    printf("\n5- Salir\n");
+    printf("\n5- Salir");
     scanf("%d",&opc);
     switch(opc){
-    case 1:{
+    case 1{
       system("cls");
-      llenarEmpresa(&e);
-      getchar();
+      getche();
       break;
     }
     
-    case 2:{
+    case 2{
       system("cls");
-      getchar();
+      getche();
       break;
     }
     
-    case 3:{
+    case 3{
       system("cls");
-      getchar();
+      getche();
       break;
     }
     
-    case 4:{
+    case 4{
       system("cls");
-      getchar();
+      getche();
       break;
     }
     
