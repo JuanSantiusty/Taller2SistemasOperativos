@@ -3,8 +3,16 @@
 #include <ctype.h>
 #include "empresa.h"
 
+/**
+ * @param n Variable para iterar estructuras repetitivas
+ * @param i Variable para iterar estructuras repetitivas
+*/
 int n,f,i;
 
+/**
+ * @brief Funcion para poner una cadena de texto en minuculas
+ * @param cadena Cadena de texto a comvertir
+*/
 void convertir_a_minusculas(char *cadena) {
     i = 0;
     while (cadena[i] != '\0') {
@@ -12,7 +20,10 @@ void convertir_a_minusculas(char *cadena) {
         i++;
     }
 }
-
+/**
+ * @brief Funcion para llenar los datos de una empresa
+ * @param e Dierccion de la empresa para ingresar datos
+*/
 void llenarEmpresa(Empresa *e){
   printf("\nDatos Empresa");
   printf("\nNombre de la empresa: ");
@@ -22,6 +33,10 @@ void llenarEmpresa(Empresa *e){
   llenarSemestre(e->semestre);
 }
 
+/**
+ * @brief Funcion para llenar los datos del semestre de una empresa, se usa una variable f para solicitar el numero de factuas a ingresar en vada mes, minimo 1 maximo 5
+ * @param s Arreglo de meses que funcoina como semestre
+*/
 void llenarSemestre(Mes s[]){
   printf("\nDatos Semestre");
   for (n=0;n<numSemestre;n++) {
@@ -43,7 +58,11 @@ void llenarSemestre(Mes s[]){
     
   }
 } 
-
+/**
+ * @brief Funcion para mostrar y sumar el valor de todas las facturas de un mes, en caso de que el mes no exista se mostrara un mensaje informando
+ * @param nomMes Mes a buscar
+ * @return El valor total de todas las facturas de un mes
+*/
 
 int facturasMes(Mes s[],char nomMes[]){
   int pos=-1;

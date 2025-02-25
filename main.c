@@ -1,8 +1,17 @@
+/**
+ * @brief Program para la gestion finenciera de una empresa
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "empresa.h"
 
 int main(){
+  /**
+   * @param opc Variable para eleguir una opcion del menu
+   * @param nomMes variable para guardar el nombre de un mes
+   * @param e Structura empresa para trabajar
+  */
   int opc=0;
   char nomMes[20];
   Empresa e;
