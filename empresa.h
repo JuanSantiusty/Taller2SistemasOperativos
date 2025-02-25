@@ -15,7 +15,10 @@ typedef struct {
   Mes semestre[numSemestre];
 }Empresa;
 
+void convertir_a_minusculas(char *cadena);
 void llenarEmpresa(Empresa *e);
 void llenarSemestre(Mes s[]);
+
+int facturasMes(Mes s[],char nomMes[]);
 
 #endif
