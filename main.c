@@ -26,14 +26,14 @@ int main(){
     scanf("%d",&opc);
     switch(opc){
     case 1:{
-      system("cls");
+      system("clear");
       llenarEmpresa(&e);
       getchar();
       break;
     }
     
     case 2:{
-      system("cls");
+      system("clear");
       printf("\nIngres el nombre de un Mes:");
       scanf("%s",nomMes);
       printf("\nRecaudo completo del Mes: %d",facturasMes(e.semestre,nomMes));
@@ -42,13 +42,15 @@ int main(){
     }
     
     case 3:{
-      system("cls");
+      system("clear");
+      recaudoPorMes(e.semestre);
       getchar();
       break;
     }
     
     case 4:{
-      system("cls");
+      system("clear");
+      recaudoSemestre(e.semestre);
       getchar();
       break;
     }

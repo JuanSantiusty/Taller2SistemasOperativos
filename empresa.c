@@ -25,7 +25,7 @@ void convertir_a_minusculas(char *cadena) {
  * @param e Dierccion de la empresa para ingresar datos
 */
 void llenarEmpresa(Empresa *e){
-  printf("\nDatos Empresa");
+  printf("\nDatos Empresa\n");
   printf("\nNombre de la empresa: ");
   scanf("%s",&e->nombre); 
   printf("\nNit de la Empresa: ");
@@ -41,7 +41,7 @@ void llenarSemestre(Mes s[]){
   printf("\nDatos Semestre");
   for (n=0;n<numSemestre;n++) {
     printf("\nDatos Mes %d",n+1);
-    printf("\nNombre Mes:");
+    printf("\nNombre Mes: ");
     scanf("%s",&s[n].nombre);
     do{
       printf("\nNumero de facturas a ingresar: ");
@@ -76,12 +76,49 @@ int facturasMes(Mes s[],char nomMes[]){
   int total=0;
   if(pos!=-1){
     for(n=0;n<numFacturas;n++){
+      if(s[pos].factura[n] > 0){
       total+=s[pos].factura[n];
-      printf("\nDatos Factura %d",n+1);
+      printf("\nDatos Factura %d ",n+1);
       printf("\Valor factura %d",s[pos].factura[n]);
+      }
     }
   }else{
     printf("Mes no existe");
   }
   return total;
+}
+
+/**
+ * @brief Calcula y muestra el recaudo obtenido por cada mes.
+ * 
+ * @param s Arreglo de estructuras de tipo Mes que contiene la información de los meses y sus facturas.
+ */
+
+void recaudoPorMes(Mes s[]){
+
+ printf("\nRecaudo obtenido por cada mes:\n");
+ for(int i=0; i< numSemestre; i++){
+  int total=0;
+  for(int j=0;j<numFacturas;j++){
+   total += s[i].factura[j];
+  }
+  printf("Mes: %s, Total: %d\n", s[i].nombre, total);
+ }
+}
+
+/**
+ * @brief Calcula y muestra el recaudo total de todo el semestre.
+ * 
+ * @param s Arreglo de estructuras de tipo Mes que contiene la información de los meses y sus facturas.
+ */
+
+void recaudoSemestre(Mes s[]){
+
+ int totalSemestre = 0;
+ for(int i=0; i<numSemestre;i++){
+  for(int j=0;j<numFacturas;j++){
+   totalSemestre += s[i].factura[j];
+  }
+ }
+ printf("\Recaudo total del semestre: %d\n", totalSemestre);
 }

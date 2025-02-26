@@ -34,6 +34,8 @@ typedef struct {
 void convertir_a_minusculas(char *cadena);
 void llenarEmpresa(Empresa *e);
 void llenarSemestre(Mes s[]);
+void recaudoPorMes(Mes s[]);
+void recaudoSemestre(Mes s[]);
 
 int facturasMes(Mes s[],char nomMes[]);
 
